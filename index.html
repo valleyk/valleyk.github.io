@@ -62,6 +62,137 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/24/java基础/" class="article-date">
+  <time datetime="2019-07-24T13:35:05.516Z" itemprop="datePublished">2019-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/基础/">基础</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/24/java基础/">java基础01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-java常见数据结构"><a href="#1-java常见数据结构" class="headerlink" title="1.java常见数据结构"></a>1.java常见数据结构</h5><p>java常见的数据结构有Collection和Map，Collection接口下包括List和Set接口。List接口下有ArrayList、LinkedList、Vector等；<br>Set接口下有HashSet、LinkedSet等实现类和SortSet接口，HashSet下有LinkedHashSet子类，SortedSet接口下有TreeSet实现类。<br>Map接口下有HashMap(子类LinkedHashMap),HashTable(子类Properties)实现类和SortedMap接口(TreeMap实现类)。</p>
+<h5 id="2-Map和Set的本质区别"><a href="#2-Map和Set的本质区别" class="headerlink" title="2.Map和Set的本质区别"></a>2.Map和Set的本质区别</h5><p>Map不能包含重复的键，每个键只能有一个对应的值，不能有空值键。<br>Set不能包含重复的元素，最多有一个空值，继承自Collection接口，底层是Map实现。</p>
+<h5 id="3-String、StringBuffer、StringBuilder的区别"><a href="#3-String、StringBuffer、StringBuilder的区别" class="headerlink" title="3.String、StringBuffer、StringBuilder的区别"></a>3.String、StringBuffer、StringBuilder的区别</h5><p>StringBuffer是线程安全的，StringBuilder是线程不安全的。速度上StringBuilder&gt;StringBuffer&gt;String.<br>相对与String类来说，StringBuffer和StringBuilder类的对象可以多次修改而不生成新的对象。<br>String适用于少量字符串操作的情况，StringBuilder和StringBuffer适用于大量字符串操作的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;a&quot;;</span><br><span class="line">str+=b;</span><br></pre></td></tr></table></figure>
+
+<p>在上述字符串操作上，会重新生成一个String对象 “ab”,然后改变句柄指向str。</p>
+<h5 id="4-Overload和Override的区别"><a href="#4-Overload和Override的区别" class="headerlink" title="4.Overload和Override的区别"></a>4.Overload和Override的区别</h5><p>1.重写</p>
+<ul>
+<li>重写是子类对与父类可以访问的方法的重新编写，返回值和形参都不能改变，子类可以根据自己的需要需要实现父类的方法<br>重写不能抛出新的异常或者比父类更宽泛的异常。</li>
+<li>当需要在子类中调用父类呗重写的方法时，要使用super关键字</li>
+</ul>
+<p>2.重载</p>
+<ul>
+<li>重载是在一个类中，方法名字相同，参数不同，返回值类型也可以不同，每一个重载的方法都有独一无二的参数列表。</li>
+</ul>
+<h5 id="5-jvm加载class的原理"><a href="#5-jvm加载class的原理" class="headerlink" title="5.jvm加载class的原理"></a>5.jvm加载class的原理</h5><ul>
+<li>jvm中类的装载是有ClassLoader(类加载器)和它的子类实现的。类状态方式分为显示装载和隐式装载</li>
+<li>隐式装载，通过new等方式生成对象时，隐式调用类装载器加载对应的类到jvm中</li>
+<li>显示装载，通过Class.forName()等方法，显示加载需要的类。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/24/java基础/" data-id="cjygziu2e0007ywwp4e5w6zft" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java基础/">java基础</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-leetcode04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/12/leetcode04/" class="article-date">
+  <time datetime="2019-07-12T06:02:11.675Z" itemprop="datePublished">2019-07-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/12/leetcode04/" data-id="cjygziu1i0000ywwpdb7eox47" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java_reomve_Cookie" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/07/10/java_reomve_Cookie/" class="article-date">
+  <time datetime="2019-07-10T11:37:25.668Z" itemprop="datePublished">2019-07-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/Cookie/">Cookie</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/10/java_reomve_Cookie/">java增加Cookie和删除Cookie</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="java通过response删除Cookie"><a href="#java通过response删除Cookie" class="headerlink" title="java通过response删除Cookie"></a>java通过response删除Cookie</h5><p>添加一个和需要删除的Cookie重名的Cookie,然后设置存在时间为0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = new Cookie(&quot;token&quot;, null);</span><br><span class="line">cookie.setMaxAge(0);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/07/10/java_reomve_Cookie/" data-id="cjygziu2i000bywwprcv5swqf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cookie/">Cookie</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-thymelaf-复用" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/07/10/thymelaf-复用/" class="article-date">
@@ -97,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/thymelaf-复用/" data-id="cjxwzcf1r0006yowpx5akljgg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/thymelaf-复用/" data-id="cjygziu2f0008ywwp4yg2h4st" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thymealf/">thymealf</a></li></ul>
@@ -141,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/help tags/" data-id="cjxwzcf1c0000yowpyvblnez6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/help tags/" data-id="cjygziu270003ywwpxidol11g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/links/">links</a></li></ul>
@@ -185,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/09/idea-terminal/" data-id="cjxwzcf1q0005yowp2pscqlqt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/09/idea-terminal/" data-id="cjygziu250002ywwpg51s63o2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
@@ -213,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/06/flyway/" data-id="cjxwzcf1j0001yowpjcmjz0b1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/06/flyway/" data-id="cjygziu230001ywwptvtp4c7f" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/04/hello-world/" data-id="cjxwzcf1o0004yowp88abxfi4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/04/hello-world/" data-id="cjygziu2c0006ywwpjuoaygi7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +413,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/Cookie/">Cookie</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/基础/">基础</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -292,7 +423,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java基础/">java基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li></ul>
     </div>
   </div>
 
@@ -302,7 +433,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a>
+      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java基础/" style="font-size: 10px;">java基础</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a>
     </div>
   </div>
 
@@ -324,23 +455,23 @@
       <ul>
         
           <li>
+            <a href="/2019/07/24/java基础/">java基础01</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/12/leetcode04/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/10/java_reomve_Cookie/">java增加Cookie和删除Cookie</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/10/thymelaf-复用/">thymealf复用页面</a>
           </li>
         
           <li>
             <a href="/2019/07/10/help tags/">常用教程、文档链接地址</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/09/idea-terminal/">用git bash作为idea的terminal</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/06/flyway/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/04/hello-world/">Hello World</a>
           </li>
         
       </ul>
