@@ -62,6 +62,152 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-String常量池" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/15/String常量池/" class="article-date">
+  <time datetime="2019-08-15T09:02:31.936Z" itemprop="datePublished">2019-08-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java基础/">java基础</a>►<a class="article-category-link" href="/categories/java基础/String/">String</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/15/String常量池/">String常量池</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>初始常量池为空</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str =  <span class="keyword">new</span> String(<span class="string">"a"</span>+<span class="string">"b"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>产生了多少个对象</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/15/String常量池/" data-id="cjzdx8vp50001pcwpw2n9bhje" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/常量池/">常量池</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-centos运行spring boot项目" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/centos运行spring boot项目/" class="article-date">
+  <time datetime="2019-08-14T09:20:51.209Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/centos运行spring boot项目/">centos运行spring boot项目</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="从github克隆项目"><a href="#从github克隆项目" class="headerlink" title="从github克隆项目"></a>从github克隆项目</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone  + ip</span><br></pre></td></tr></table></figure>
+
+<h6 id="打包项目"><a href="#打包项目" class="headerlink" title="打包项目"></a>打包项目</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用flyway初始化数据库"><a href="#使用flyway初始化数据库" class="headerlink" title="使用flyway初始化数据库"></a>使用flyway初始化数据库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn flyway:migrate</span><br></pre></td></tr></table></figure>
+
+<h5 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar target/xxx.jar  -spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
+
+<h5 id="以debug方式运行，会打印错误信息"><a href="#以debug方式运行，会打印错误信息" class="headerlink" title="以debug方式运行，会打印错误信息"></a>以debug方式运行，会打印错误信息</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar target/xxx.jar  -debug</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/14/centos运行spring boot项目/" data-id="cjzdx8vpi0006pcwp24hm6x8e" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql忽略大小写敏感" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/mysql忽略大小写敏感/" class="article-date">
+  <time datetime="2019-08-14T09:18:45.007Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/mysql/">mysql</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/14/mysql忽略大小写敏感/">msyql忽略大小写敏感</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br><span class="line">+-----------------------+</span><br><span class="line">| Tables_in_test        |</span><br><span class="line">+-----------------------+</span><br><span class="line">| COMMENT               |</span><br><span class="line">| NOTIFICATION          |</span><br><span class="line">| QUESTION              |</span><br><span class="line">| USER                  |</span><br><span class="line">| flyway_schema_history |</span><br><span class="line">+-----------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select count(*) from question;</span><br><span class="line">ERROR 1146 (42S02): Table &apos;test.question&apos; doesn&apos;t exist</span><br></pre></td></tr></table></figure>
+
+<p>如果数据库表已经创建<br>改动配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure>
+
+<p>忽略大小写敏感之后<br>会出现table doesn’t exist<br>需要重新新建库<br>新建表    </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/08/14/mysql忽略大小写敏感/" data-id="cjzdx8vpt000kpcwpz3z26elv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-centos7搭建spring boot环境" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/11/centos7搭建spring boot环境/" class="article-date">
@@ -101,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/11/centos7搭建spring boot环境/" data-id="cjz7s7emq000boswpvwrysumf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/11/centos7搭建spring boot环境/" data-id="cjzdx8vpl000apcwp4gg8cm6i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-boot/">spring boot</a></li></ul>
@@ -199,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/10/centos7搭建mysql/" data-id="cjz7s7em60000oswpvtwqqv93" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/10/centos7搭建mysql/" data-id="cjzdx8vow0000pcwp9rh84tuw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li></ul>
@@ -261,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java基础/" data-id="cjz7s7emp000aoswpcwb3i7qx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java基础/" data-id="cjzdx8vq0000qpcwpbp6s6ibh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
@@ -305,7 +451,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java基础02/" data-id="cjz7s7ems000foswp340jnlct" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java基础02/" data-id="cjzdx8vpq000hpcwpcwnltqom" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
@@ -429,7 +575,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java路线/" data-id="cjz7s7emt000goswp3eaiodxu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java路线/" data-id="cjzdx8vq2000rpcwp45toac1p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/路线/">路线</a></li></ul>
@@ -472,7 +618,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/java_reomve_Cookie/" data-id="cjz7s7emn0006oswpzubmff8x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/java_reomve_Cookie/" data-id="cjzdx8vpm000bpcwpdhg2cuh8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cookie/">Cookie</a></li></ul>
@@ -519,7 +665,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/thymelaf-复用/" data-id="cjz7s7emv000joswpq41zk7xv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/10/thymelaf-复用/" data-id="cjzdx8vpx000mpcwpj1mc52h9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/thymealf/">thymealf</a></li></ul>
@@ -531,121 +677,12 @@
 
 
   
-    <article id="post-help tags" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/10/help tags/" class="article-date">
-  <time datetime="2019-07-10T07:09:49.135Z" itemprop="datePublished">2019-07-10</time>
-</a>
+
+
+  <nav id="page-nav">
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/help-tags/">help tags</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/help tags/">常用教程、文档链接地址</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://spring.io/guides" target="_blank" rel="noopener">spring</a><br><a href="https://spring.io/guides/gs/serving-web-content/" target="_blank" rel="noopener">spring web</a><br><a href="https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html" target="_blank" rel="noopener">spring mvc</a><br><a href="https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#using-boot-devtools" target="_blank" rel="noopener">spring dev tools</a><br><a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener">spring boot</a><br><a href="https://v3.bootcss.com/getting-started/" target="_blank" rel="noopener">bootstrap</a><br><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html" target="_blank" rel="noopener">thymealf</a><br><a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener">mybatis</a></p>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.projectlombok.org" target="_blank" rel="noopener">lombok</a><br><a href="https://flywaydb.org/getstarted/firststeps/maven" target="_blank" rel="noopener">flyway</a></p>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">flyway:</span><br><span class="line">	mvn flyway:migrate</span><br><span class="line">	</span><br><span class="line">mybaitis generator:</span><br><span class="line">	mvn -Dmybatis.generator.overwrite=<span class="literal">true</span> mybatis-generator:generate</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/help tags/" data-id="cjz7s7eml0005oswpzx5lnl7x" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/links/">links</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-idea-terminal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/09/idea-terminal/" class="article-date">
-  <time datetime="2019-07-09T12:25:32.899Z" itemprop="datePublished">2019-07-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tips/">tips</a>►<a class="article-category-link" href="/categories/tips/idea/">idea</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/idea-terminal/">用git bash作为idea的terminal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="用git-bash作为idea的terminal"><a href="#用git-bash作为idea的terminal" class="headerlink" title="用git bash作为idea的terminal"></a>用git bash作为idea的terminal</h4><p>1.File-&gt;terminal-&gt;shell path   =  C:\Program Files\Git\bin\bash.exe</p>
-<h4 id="防止乱码问题"><a href="#防止乱码问题" class="headerlink" title="防止乱码问题"></a>防止乱码问题</h4><p>编辑C:\Program Files\Git\etc\bash.bashrc  最后添加<br>export LANG=”zh_CN.UTF-8”<br>export LC_ALL=”zh_CN.UTF-8”</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/09/idea-terminal/" data-id="cjz7s7eme0001oswpwjiwp864" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-flyway" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/06/flyway/" class="article-date">
-  <time datetime="2019-07-06T02:58:50.985Z" itemprop="datePublished">2019-07-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="spring-boot集成flyway-H2数据库"><a href="#spring-boot集成flyway-H2数据库" class="headerlink" title="spring boot集成flyway,H2数据库"></a>spring boot集成flyway,H2数据库</h1>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/06/flyway/" data-id="cjz7s7emk0004oswp2j08urc8" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+  </nav>
 
 </section>
         
@@ -655,7 +692,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/Cookie/">Cookie</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/基础/">基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/路线/">路线</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/Cookie/">Cookie</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/基础/">基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/路线/">路线</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/String/">String</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -665,7 +702,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路线/">路线</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常量池/">常量池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路线/">路线</a></li></ul>
     </div>
   </div>
 
@@ -675,7 +712,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/centos-mysql/" style="font-size: 10px;">centos,mysql</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a> <a href="/tags/基础/" style="font-size: 15px;">基础</a> <a href="/tags/路线/" style="font-size: 10px;">路线</a>
+      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/centos-mysql/" style="font-size: 10px;">centos,mysql</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a> <a href="/tags/基础/" style="font-size: 15px;">基础</a> <a href="/tags/常量池/" style="font-size: 10px;">常量池</a> <a href="/tags/路线/" style="font-size: 10px;">路线</a>
     </div>
   </div>
 
@@ -697,23 +734,23 @@
       <ul>
         
           <li>
+            <a href="/2019/08/15/String常量池/">String常量池</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/14/centos运行spring boot项目/">centos运行spring boot项目</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/14/mysql忽略大小写敏感/">msyql忽略大小写敏感</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/11/centos7搭建spring boot环境/">centos7搭建spring boot环境</a>
           </li>
         
           <li>
             <a href="/2019/08/10/centos7搭建mysql/">centos搭建mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/27/java基础/">java基础01</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/27/java基础02/">java基础02</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/27/java路线/">java学习路线</a>
           </li>
         
       </ul>
