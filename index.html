@@ -62,6 +62,80 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-多线程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/多线程/" class="article-date">
+  <time datetime="2019-10-17T13:16:01.500Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/线程/">线程</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/多线程/">java线程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-进程和多线程"><a href="#1-进程和多线程" class="headerlink" title="1.进程和多线程"></a>1.进程和多线程</h3><h4 id="1-1进程和线程"><a href="#1-1进程和线程" class="headerlink" title="1.1进程和线程"></a>1.1进程和线程</h4><ul>
+<li>1.进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。</li>
+<li>2.线程与进程类似，线程是一个比进程更小的执行单位。</li>
+<li>3.一个进程在执行过程中可以产生多个线程。</li>
+<li>4.与进程不同的是同类的多个线程共享一块内存空间和一组系统资源，所以系统在产生一个线程，或者是在各个线程之间切换工作时，负担比进程小的多，因此，线程也被称为轻量级进程。<h4 id="1-2-多线程"><a href="#1-2-多线程" class="headerlink" title="1.2 多线程"></a>1.2 多线程</h4></li>
+<li>多线程就是多个线程同时运行或者交替运行。单核CPU的话是顺序执行,也就是交替执行。而多核CPU因为每个CPU都有自己的运算器，所以可以同时运行。</li>
+<li>多线程是开发高并发系统的基础，利用好多线程机制可以大大提高系统整体的并发能力以及性能。</li>
+</ul>
+<h4 id="2-1同步与异步"><a href="#2-1同步与异步" class="headerlink" title="2.1同步与异步"></a>2.1同步与异步</h4><h4 id="2-2并发-Concurrency-和并行-Parallelism"><a href="#2-2并发-Concurrency-和并行-Parallelism" class="headerlink" title="2.2并发(Concurrency)和并行(Parallelism)"></a>2.2并发(Concurrency)和并行(Parallelism)</h4><h4 id="2-3高并发"><a href="#2-3高并发" class="headerlink" title="2.3高并发"></a>2.3高并发</h4><h4 id="2-4临界区"><a href="#2-4临界区" class="headerlink" title="2.4临界区"></a>2.4临界区</h4><h4 id="2-4阻塞和非阻塞"><a href="#2-4阻塞和非阻塞" class="headerlink" title="2.4阻塞和非阻塞"></a>2.4阻塞和非阻塞</h4><h3 id="2-使用多线程常见的三种方式"><a href="#2-使用多线程常见的三种方式" class="headerlink" title="2.使用多线程常见的三种方式"></a>2.使用多线程常见的三种方式</h3><ul>
+<li>1.继承Thread类<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>  <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.run();</span><br><span class="line">        System.out.println(<span class="string">"MyThread"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyThread myThread = <span class="keyword">new</span> MyThread();</span><br><span class="line">        myThread.start();</span><br><span class="line">        System.out.println(<span class="string">"线程结束"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">线程结束</span><br><span class="line">MyThread</span><br></pre></td></tr></table></figure>
+
+<p>可以看到run方法的执行时间是随机的<br>线程是一个子任务，CPU以不确定的方式来调用线程中的run方法</p>
+<ul>
+<li>2.实现Runnable接口<br>java只能单继承，但是可以实现继承多个接口<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"MyRunnable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main</span><br><span class="line"></span><br><span class="line">        Runnable runnable = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">        Thread thread = <span class="keyword">new</span> Thread(runnable);</span><br><span class="line">        thread.start();</span><br><span class="line">        System.out.println(<span class="string">"线程结束"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">线程结束</span><br><span class="line">MyRunnable</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3.使用线程池</li>
+</ul>
+<h3 id="3-实例变量与线程安全"><a href="#3-实例变量与线程安全" class="headerlink" title="3.实例变量与线程安全"></a>3.实例变量与线程安全</h3><ul>
+<li>3.1不共享数据的情况</li>
+<li>3.2共享数据的情况</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/17/多线程/" data-id="ck1uqciko000qocwpg3kexn75" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程/">多线程</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-java 8 new property" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/24/java 8 new property/" class="article-date">
@@ -79,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/24/java 8 new property/" data-id="ck1uqa9v8000s4cwpskuy8obt" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/24/java 8 new property/" data-id="ck1uqcikb000docwpr3nju28p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -123,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/15/String常量池/" data-id="ck1uqa9sn00004cwpzd43r9or" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/15/String常量池/" data-id="ck1uqcijn0000ocwp1x5i2qac" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/String/">String</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/常量池/">常量池</a></li></ul>
@@ -173,7 +247,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/14/centos运行spring boot项目/" data-id="ck1uqa9uq000j4cwp984f6ag9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/14/centos运行spring boot项目/" data-id="ck1uqcik80009ocwplf3pjlp2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -223,7 +297,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/14/mysql忽略大小写敏感/" data-id="ck1uqa9vu00124cwpgc8pnncd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/14/mysql忽略大小写敏感/" data-id="ck1uqciks000wocwp7ahgu2py" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
@@ -274,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/11/centos7搭建spring boot环境/" data-id="ck1uqa9t300014cwpt3oz89w3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/11/centos7搭建spring boot环境/" data-id="ck1uqcijv0001ocwp0hyuawgm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos7/">centos7</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring-boot/">spring boot</a></li></ul>
@@ -372,7 +446,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/10/centos7搭建mysql/" data-id="ck1uqa9ut000m4cwp3ft60bp6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/10/centos7搭建mysql/" data-id="ck1uqcik30005ocwpnqn1b7vo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li></ul>
@@ -434,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java基础/" data-id="ck1uqa9vh000v4cwpwerm35nw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java基础/" data-id="ck1uqcikd000focwp44vfw78m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
@@ -478,7 +552,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java基础02/" data-id="ck1uqa9vq000x4cwpu5x3uuv4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java基础02/" data-id="ck1uqcikk000kocwpuvsapi3s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基础/">基础</a></li></ul>
@@ -602,53 +676,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/27/java路线/" data-id="ck1uqa9v5000r4cwp874uwilg" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/07/27/java路线/" data-id="ck1uqcikm000oocwp53v8z30a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/路线/">路线</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-java_reomve_Cookie" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/07/10/java_reomve_Cookie/" class="article-date">
-  <time datetime="2019-07-10T11:37:25.668Z" itemprop="datePublished">2019-07-10</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>►<a class="article-category-link" href="/categories/java/Cookie/">Cookie</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/10/java_reomve_Cookie/">java增加Cookie和删除Cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="java通过response删除Cookie"><a href="#java通过response删除Cookie" class="headerlink" title="java通过response删除Cookie"></a>java通过response删除Cookie</h5><p>添加一个和需要删除的Cookie重名的Cookie,然后设置存在时间为0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = new Cookie(&quot;token&quot;, null);</span><br><span class="line">cookie.setMaxAge(0);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/07/10/java_reomve_Cookie/" data-id="ck1uqa9vx00144cwp8vgm6zuw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cookie/">Cookie</a></li></ul>
 
     </footer>
   </div>
@@ -672,7 +703,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/Cookie/">Cookie</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/基础/">基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/路线/">路线</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/String/">String</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/help-tags/">help tags</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java/Cookie/">Cookie</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/spring-boot/">spring boot</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/基础/">基础</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/线程/">线程</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/路线/">路线</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/">java基础</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/java基础/String/">String</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/mysql/">mysql</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/">tips</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/tips/idea/">idea</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/tips/thymealf/">thymealf</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -682,7 +713,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常量池/">常量池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路线/">路线</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/String/">String</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-mysql/">centos,mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos7/">centos7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git-bash/">git bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/help-tags/">help tags</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/links/">links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spring-boot/">spring boot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/th-insert/">th:insert</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/thymealf/">thymealf</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基础/">基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程/">多线程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/常量池/">常量池</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/路线/">路线</a></li></ul>
     </div>
   </div>
 
@@ -692,7 +723,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/centos-mysql/" style="font-size: 10px;">centos,mysql</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a> <a href="/tags/基础/" style="font-size: 15px;">基础</a> <a href="/tags/常量池/" style="font-size: 10px;">常量池</a> <a href="/tags/路线/" style="font-size: 10px;">路线</a>
+      <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/centos-mysql/" style="font-size: 10px;">centos,mysql</a> <a href="/tags/centos7/" style="font-size: 10px;">centos7</a> <a href="/tags/git-bash/" style="font-size: 10px;">git bash</a> <a href="/tags/help-tags/" style="font-size: 10px;">help tags</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/links/" style="font-size: 10px;">links</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/spring-boot/" style="font-size: 10px;">spring boot</a> <a href="/tags/th-insert/" style="font-size: 10px;">th:insert</a> <a href="/tags/thymealf/" style="font-size: 10px;">thymealf</a> <a href="/tags/基础/" style="font-size: 15px;">基础</a> <a href="/tags/多线程/" style="font-size: 10px;">多线程</a> <a href="/tags/常量池/" style="font-size: 10px;">常量池</a> <a href="/tags/路线/" style="font-size: 10px;">路线</a>
     </div>
   </div>
 
@@ -701,7 +732,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li></ul>
     </div>
   </div>
 
@@ -712,6 +743,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2019/10/17/多线程/">java线程</a>
+          </li>
         
           <li>
             <a href="/2019/08/24/java 8 new property/">(no title)</a>
@@ -727,10 +762,6 @@
         
           <li>
             <a href="/2019/08/14/mysql忽略大小写敏感/">msyql忽略大小写敏感</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/11/centos7搭建spring boot环境/">centos7搭建spring boot环境</a>
           </li>
         
       </ul>
