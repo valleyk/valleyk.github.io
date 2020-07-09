@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>String常量池</title>
+    <url>/2019/08/15/String%E5%B8%B8%E9%87%8F%E6%B1%A0/</url>
+    <content><![CDATA[<p>初始常量池为空</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String str =  <span class="keyword">new</span> String(<span class="string">"a"</span>+<span class="string">"b"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>产生了多少个对象</p>
+]]></content>
+      <categories>
+        <category>java基础</category>
+        <category>String</category>
+      </categories>
+      <tags>
+        <tag>String</tag>
+        <tag>常量池</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos运行spring boot项目</title>
+    <url>/2019/08/14/centos%E8%BF%90%E8%A1%8Cspring%20boot%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h6 id="从github克隆项目"><a href="#从github克隆项目" class="headerlink" title="从github克隆项目"></a>从github克隆项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone  + ip</span><br></pre></td></tr></table></figure>
+
+<h6 id="打包项目"><a href="#打包项目" class="headerlink" title="打包项目"></a>打包项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用flyway初始化数据库"><a href="#使用flyway初始化数据库" class="headerlink" title="使用flyway初始化数据库"></a>使用flyway初始化数据库</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn flyway:migrate</span><br></pre></td></tr></table></figure>
+
+<h5 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
+
+<h5 id="以debug方式运行，会打印错误信息"><a href="#以debug方式运行，会打印错误信息" class="headerlink" title="以debug方式运行，会打印错误信息"></a>以debug方式运行，会打印错误信息</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -debug</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos搭建mysql</title>
+    <url>/2019/08/10/centos7%E6%90%AD%E5%BB%BAmysql/</url>
+    <content><![CDATA[<h5 id="更新镜像源"><a href="#更新镜像源" class="headerlink" title="更新镜像源"></a>更新镜像源</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看是否已经安装mysql"><a href="#查看是否已经安装mysql" class="headerlink" title="查看是否已经安装mysql"></a>查看是否已经安装mysql</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看是否已经安装Mariadb"><a href="#查看是否已经安装Mariadb" class="headerlink" title="查看是否已经安装Mariadb"></a>查看是否已经安装Mariadb</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm  -qa | grep -i mariadb</span><br></pre></td></tr></table></figure>
+
+<h5 id="卸载已经安装的mariadb数据库"><a href="#卸载已经安装的mariadb数据库" class="headerlink" title="卸载已经安装的mariadb数据库"></a>卸载已经安装的mariadb数据库</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa|grep mariadb|xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
+
+<h5 id="下载安装包"><a href="#下载安装包" class="headerlink" title="下载安装包"></a>下载安装包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h5 id="安装rpm包"><a href="#安装rpm包" class="headerlink" title="安装rpm包"></a>安装rpm包</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm</span><br></pre></td></tr></table></figure>
+
+<h5 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h5><p>查看可用的MySQL安装文件</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum repolist all | grep mysql</span><br></pre></td></tr></table></figure>
+
+<p>安装mysql</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install mysql-server</span><br></pre></td></tr></table></figure>
+
+<h5 id="查看mysql是否安装成功"><a href="#查看mysql是否安装成功" class="headerlink" title="查看mysql是否安装成功"></a>查看mysql是否安装成功</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mysql</span><br></pre></td></tr></table></figure>
+
+<h5 id="mysql服务命令"><a href="#mysql服务命令" class="headerlink" title="mysql服务命令"></a>mysql服务命令</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">systemctl start mysqld.service #启动 mysql</span><br><span class="line">systemctl restart mysqld.service #重启 mysql</span><br><span class="line">systemctl stop mysqld.service #停止 mysql</span><br><span class="line">systemctl enable mysqld.service #设置 mysql 开机启动</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># mysql -u root</span><br><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update user set password=PASSWORD(&quot;这里输入root用户密码&quot;) where User=&apos;root&apos;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h5 id="解决不能登陆的问题"><a href="#解决不能登陆的问题" class="headerlink" title="解决不能登陆的问题"></a>解决不能登陆的问题</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br></pre></td></tr></table></figure>
+
+<p>在mysqld 下添加一行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">skip_grant_tables</span><br></pre></td></tr></table></figure>
+
+<p>重启mysql</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql -uroot -p</span><br><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
+
+<p>删除匿名用户</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">delete from user where user=&apos;&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>设置权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;localhost&apos; identified by &apos;password&apos; with grant option;</span><br></pre></td></tr></table></figure>
+
+<p>遇到</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR 1290 (HY000): The MySQL server is running with the --skip-grant-tables option so it cannot execute this statement</span><br></pre></td></tr></table></figure>
+
+<p>刷新权限</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置远程登陆"><a href="#设置远程登陆" class="headerlink" title="设置远程登陆"></a>设置远程登陆</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;your username&apos;@&apos;%&apos; IDENTIFIED BY &apos;your password&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>授权单个数据库</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">grant all privileges on test.* to &apos;username&apos;@&apos;%&apos; identified by &apos;password&apos; with grant option;</span><br></pre></td></tr></table></figure>
+
+<h5 id="开启防火墙"><a href="#开启防火墙" class="headerlink" title="开启防火墙"></a>开启防火墙</h5><p>不同的提供商，方法不同<br>设置完了之后可以用端口扫描测试一下</p>
+<h5 id="轻度使用时，降低内存占用"><a href="#轻度使用时，降低内存占用" class="headerlink" title="轻度使用时，降低内存占用"></a>轻度使用时，降低内存占用</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vi /etc/my.cnf</span><br></pre></td></tr></table></figure>
+
+<p>修改配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">performance_schema_max_table_instances=400</span><br><span class="line">table_definition_cache=400</span><br><span class="line">table_open_cache=256</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://blog.csdn.net/pengjunlee/article/details/81212250" target="_blank" rel="noopener">原文1</a><br><a href="https://www.linuxidc.com/Linux/2015-04/116492.html" target="_blank" rel="noopener">原文2</a><br><a href="https://www.cnblogs.com/wt11/p/9291643.html" target="_blank" rel="noopener">原文3</a></p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>centos,mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>centos7搭建spring boot环境</title>
+    <url>/2019/08/11/centos7%E6%90%AD%E5%BB%BAspring%20boot%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h5 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum update</span><br><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+
+<h5 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yum install maven</span><br></pre></td></tr></table></figure>
+
+<h6 id="查看maven版本"><a href="#查看maven版本" class="headerlink" title="查看maven版本"></a>查看maven版本</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn -version</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Apache Maven 3.0.5 (Red Hat 3.0.5-17)</span><br><span class="line">Maven home: /usr/share/maven</span><br><span class="line">Java version: 1.8.0_222, vendor: Oracle Corporation</span><br><span class="line">Java home: /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64/jre</span><br><span class="line">Default locale: en_US, platform encoding: UTF-8</span><br><span class="line">OS name: &quot;linux&quot;, version: &quot;5.1.5-1.el7.elrepo.x86_64&quot;, arch: &quot;amd64&quot;, family: &quot;unix&quot;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到安装maven的同时也安装了jdk</p>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>spring boot</category>
+      </categories>
+      <tags>
+        <tag>centos7</tag>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用git bash作为idea的terminal</title>
+    <url>/2019/07/09/idea-terminal/</url>
+    <content><![CDATA[<h4 id="用git-bash作为idea的terminal"><a href="#用git-bash作为idea的terminal" class="headerlink" title="用git bash作为idea的terminal"></a>用git bash作为idea的terminal</h4><p>1.File-&gt;terminal-&gt;shell path   =  C:\Program Files\Git\bin\bash.exe</p>
+<h4 id="防止乱码问题"><a href="#防止乱码问题" class="headerlink" title="防止乱码问题"></a>防止乱码问题</h4><p>编辑C:\Program Files\Git\etc\bash.bashrc  最后添加<br>export LANG=”zh_CN.UTF-8”<br>export LC_ALL=”zh_CN.UTF-8”</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2019/07/06/flyway/</url>
+    <content><![CDATA[<h1 id="spring-boot集成flyway-H2数据库"><a href="#spring-boot集成flyway-H2数据库" class="headerlink" title="spring boot集成flyway,H2数据库"></a>spring boot集成flyway,H2数据库</h1>]]></content>
+  </entry>
+  <entry>
+    <title>常用教程、文档链接地址</title>
+    <url>/2019/07/10/help%20tags/</url>
+    <content><![CDATA[<h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a href="https://spring.io/guides" target="_blank" rel="noopener">spring</a><br><a href="https://spring.io/guides/gs/serving-web-content/" target="_blank" rel="noopener">spring web</a><br><a href="https://docs.spring.io/spring/docs/5.0.3.RELEASE/spring-framework-reference/web.html" target="_blank" rel="noopener">spring mvc</a><br><a href="https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#using-boot-devtools" target="_blank" rel="noopener">spring dev tools</a><br><a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener">spring boot</a><br><a href="https://v3.bootcss.com/getting-started/" target="_blank" rel="noopener">bootstrap</a><br><a href="https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html" target="_blank" rel="noopener">thymealf</a><br><a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener">mybatis</a></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p><a href="https://www.projectlombok.org" target="_blank" rel="noopener">lombok</a><br><a href="https://flywaydb.org/getstarted/firststeps/maven" target="_blank" rel="noopener">flyway</a></p>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flyway:</span><br><span class="line">	mvn flyway:migrate</span><br><span class="line">	</span><br><span class="line">mybaitis generator:</span><br><span class="line">	mvn -Dmybatis.generator.overwrite=<span class="literal">true</span> mybatis-generator:generate</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>help tags</category>
+      </categories>
+      <tags>
+        <tag>help tags</tag>
+        <tag>links</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2019/08/24/java%208%20new%20property/</url>
+    <content><![CDATA[<p>###java 8 new property</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java增加Cookie和删除Cookie</title>
+    <url>/2019/07/10/java_reomve_Cookie/</url>
+    <content><![CDATA[<h5 id="java通过response删除Cookie"><a href="#java通过response删除Cookie" class="headerlink" title="java通过response删除Cookie"></a>java通过response删除Cookie</h5><p>添加一个和需要删除的Cookie重名的Cookie,然后设置存在时间为0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cookie cookie = new Cookie(&quot;token&quot;, null);</span><br><span class="line">cookie.setMaxAge(0);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java</category>
+        <category>Cookie</category>
+      </categories>
+      <tags>
+        <tag>Cookie</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础01</title>
+    <url>/2019/07/27/java%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h5 id="1-java常见数据结构"><a href="#1-java常见数据结构" class="headerlink" title="1.java常见数据结构"></a>1.java常见数据结构</h5><p>java常见的数据结构有Collection和Map，Collection接口下包括List和Set接口。List接口下有ArrayList、LinkedList、Vector等；<br>Set接口下有HashSet、LinkedSet等实现类和SortSet接口，HashSet下有LinkedHashSet子类，SortedSet接口下有TreeSet实现类。<br>Map接口下有HashMap(子类LinkedHashMap),HashTable(子类Properties)实现类和SortedMap接口(TreeMap实现类)。</p>
+<h5 id="2-Map和Set的本质区别"><a href="#2-Map和Set的本质区别" class="headerlink" title="2.Map和Set的本质区别"></a>2.Map和Set的本质区别</h5><p>Map不能包含重复的键，每个键只能有一个对应的值，不能有空值键。<br>Set不能包含重复的元素，最多有一个空值，继承自Collection接口，底层是Map实现。</p>
+<h5 id="3-String、StringBuffer、StringBuilder的区别"><a href="#3-String、StringBuffer、StringBuilder的区别" class="headerlink" title="3.String、StringBuffer、StringBuilder的区别"></a>3.String、StringBuffer、StringBuilder的区别</h5><p>StringBuffer是线程安全的，StringBuilder是线程不安全的。速度上StringBuilder&gt;StringBuffer&gt;String.<br>相对与String类来说，StringBuffer和StringBuilder类的对象可以多次修改而不生成新的对象。<br>String适用于少量字符串操作的情况，StringBuilder和StringBuffer适用于大量字符串操作的情况。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">String str = &quot;a&quot;;</span><br><span class="line">str+=b;</span><br></pre></td></tr></table></figure>
+
+<p>在上述字符串操作上，会重新生成一个String对象 “ab”,然后改变句柄指向str。</p>
+<h5 id="4-Overload和Override的区别"><a href="#4-Overload和Override的区别" class="headerlink" title="4.Overload和Override的区别"></a>4.Overload和Override的区别</h5><p>1.重写</p>
+<ul>
+<li>重写是子类对与父类可以访问的方法的重新编写，返回值和形参都不能改变，子类可以根据自己的需要需要实现父类的方法<br>重写不能抛出新的异常或者比父类更宽泛的异常。</li>
+<li>当需要在子类中调用父类呗重写的方法时，要使用super关键字</li>
+</ul>
+<p>2.重载</p>
+<ul>
+<li>重载是在一个类中，方法名字相同，参数不同，返回值类型也可以不同，每一个重载的方法都有独一无二的参数列表。</li>
+</ul>
+<h5 id="5-jvm加载class的原理"><a href="#5-jvm加载class的原理" class="headerlink" title="5.jvm加载class的原理"></a>5.jvm加载class的原理</h5><ul>
+<li>jvm中类的装载是有ClassLoader(类加载器)和它的子类实现的。类状态方式分为显示装载和隐式装载</li>
+<li>隐式装载，通过new等方式生成对象时，隐式调用类装载器加载对应的类到jvm中</li>
+<li>显示装载，通过Class.forName()等方法，显示加载需要的类。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>msyql忽略大小写敏感</title>
+    <url>/2019/08/14/mysql%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br><span class="line">+-----------------------+</span><br><span class="line">| Tables_in_test        |</span><br><span class="line">+-----------------------+</span><br><span class="line">| COMMENT               |</span><br><span class="line">| NOTIFICATION          |</span><br><span class="line">| QUESTION              |</span><br><span class="line">| USER                  |</span><br><span class="line">| flyway_schema_history |</span><br><span class="line">+-----------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; select count(*) from question;</span><br><span class="line">ERROR 1146 (42S02): Table &apos;test.question&apos; doesn&apos;t exist</span><br></pre></td></tr></table></figure>
+
+<p>如果数据库表已经创建<br>改动配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure>
+
+<p>忽略大小写敏感之后<br>会出现table doesn’t exist<br>需要重新新建库<br>新建表    </p>
+]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java学习路线</title>
+    <url>/2019/07/27/java%E8%B7%AF%E7%BA%BF/</url>
+    <content><![CDATA[<p>这项技术是什么？为什么要学？有什么好处</p>
+<h4 id="java路线"><a href="#java路线" class="headerlink" title="java路线"></a>java路线</h4><ul>
+<li><p>java基础</p>
+</li>
+<li><p>数据库相关</p>
+</li>
+<li><p>web前端</p>
+</li>
+</ul>
+<h5 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h5><ul>
+<li><p>流程控制</p>
+</li>
+<li><p>面向对象的概念</p>
+</li>
+<li><p>java语法</p>
+<ul>
+<li>this指针，重载与重写，final,static <ul>
+<li>集合，泛型</li>
+<li>io流</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>异常</li>
+<li>多线程</li>
+<li>网络编程</li>
+<li>反射机制</li>
+</ul>
+</li>
+</ul>
+<h5 id="web基础"><a href="#web基础" class="headerlink" title="web基础"></a>web基础</h5><ul>
+<li><p>html,css,jQuery,javascript</p>
+</li>
+<li><p>bootstrap</p>
+</li>
+<li><p>Tomcat</p>
+</li>
+<li><p>XML/注解</p>
+</li>
+<li><p>Servlet(重点)</p>
+</li>
+<li><p>HTTP协议(重点)</p>
+</li>
+<li><p>Filter过滤器(重点)</p>
+</li>
+<li><p>Listener监听器</p>
+</li>
+<li><p>Jsp</p>
+</li>
+<li><p>AJAX，JSON</p>
+</li>
+</ul>
+<h5 id="数据库基础"><a href="#数据库基础" class="headerlink" title="数据库基础"></a>数据库基础</h5><ul>
+<li><p>增删改查</p>
+</li>
+<li><p>存储过程，触发器</p>
+</li>
+<li><p>索引，锁</p>
+</li>
+<li><p>java操作数据库</p>
+<ul>
+<li>jdbc</li>
+<li>DbUtils组件</li>
+<li>mybatis(xml,注解)</li>
+<li>mybatis-generator</li>
+</ul>
+<h5 id="Linux基础"><a href="#Linux基础" class="headerlink" title="Linux基础"></a>Linux基础</h5><ul>
+<li>部署代码<ul>
+<li>安装jdk,tomcat等</li>
+<li>jar包，java -jar</li>
+<li>war包，放入tomcat的webapp目录</li>
+</ul>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>Java基础–&gt;流程控制–&gt;面向对象(包括Java语法)–&gt;Java集合–&gt;Java IO流–&gt;异常–&gt;多线程–&gt;网络编程–&gt;反射</li>
+<li>JavaWeb基础–&gt;HTML/CSS/JavaScript/jQuery–&gt;Tomcat–&gt;XML/注解-&gt;Servlet–&gt;HTTP–&gt;Filter过滤器和监听器–&gt;JSP–&gt;AJAX/JSON–&gt;数据库(MySQL)–&gt;JDBC和DbUtils</li>
+<li>框架–&gt;Maven–&gt;SpringBoot</li>
+<li>Linux基本命令</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>路线</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>路线</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java基础02</title>
+    <url>/2019/07/27/java%E5%9F%BA%E7%A1%8002/</url>
+    <content><![CDATA[<h5 id="6-java注解的工作原理"><a href="#6-java注解的工作原理" class="headerlink" title="6.java注解的工作原理"></a>6.java注解的工作原理</h5><h5 id="7-面向对象的特征"><a href="#7-面向对象的特征" class="headerlink" title="7.面向对象的特征"></a>7.面向对象的特征</h5><p>1) 抽象<br>2) 继承<br>3) 封装<br>4) 多态</p>
+<h5 id="8-java数据类型"><a href="#8-java数据类型" class="headerlink" title="8.java数据类型"></a>8.java数据类型</h5><p>1) java中包含基本数据类型和引用数据类型呢。<br>2) 基本类型：boolean,char,byte,short,int,long,float,double<br>3) 引用类型：Boolean,Character,Byte,Short,Integer,Long,Float,Double</p>
+<h5 id="9-作用域public-private-protected，不写的区别"><a href="#9-作用域public-private-protected，不写的区别" class="headerlink" title="9.作用域public,private,protected，不写的区别"></a>9.作用域public,private,protected，不写的区别</h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h5>]]></content>
+      <categories>
+        <category>java</category>
+        <category>基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>thymealf复用页面</title>
+    <url>/2019/07/10/thymelaf-%E5%A4%8D%E7%94%A8/</url>
+    <content><![CDATA[<h6 id="新建一个xxx-html文件-引用thymealf命名空间"><a href="#新建一个xxx-html文件-引用thymealf命名空间" class="headerlink" title="新建一个xxx.html文件,引用thymealf命名空间"></a>新建一个xxx.html文件,引用thymealf命名空间</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="新建一个div标签"><a href="#新建一个div标签" class="headerlink" title="新建一个div标签"></a>新建一个div标签</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div th:fragment=&quot;copy&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>在div标签中写需要复用的代码<br>最后在需要引用的地方添加一个div标签</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div th:insert=&quot;~&#123;xxx :: copy&#125;&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>tips</category>
+        <category>thymealf</category>
+      </categories>
+      <tags>
+        <tag>thymealf</tag>
+        <tag>th:insert</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java线程</title>
+    <url>/2019/10/17/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<h3 id="1-进程和多线程"><a href="#1-进程和多线程" class="headerlink" title="1.进程和多线程"></a>1.进程和多线程</h3><h4 id="1-1进程和线程"><a href="#1-1进程和线程" class="headerlink" title="1.1进程和线程"></a>1.1进程和线程</h4><ul>
+<li>1.进程是程序的一次执行过程，是系统运行程序的基本单位，因此进程是动态的。</li>
+<li>2.线程与进程类似，线程是一个比进程更小的执行单位。</li>
+<li>3.一个进程在执行过程中可以产生多个线程。</li>
+<li>4.与进程不同的是同类的多个线程共享一块内存空间和一组系统资源，所以系统在产生一个线程，或者是在各个线程之间切换工作时，负担比进程小的多，因此，线程也被称为轻量级进程。<h4 id="1-2-多线程"><a href="#1-2-多线程" class="headerlink" title="1.2 多线程"></a>1.2 多线程</h4></li>
+<li>多线程就是多个线程同时运行或者交替运行。单核CPU的话是顺序执行,也就是交替执行。而多核CPU因为每个CPU都有自己的运算器，所以可以同时运行。</li>
+<li>多线程是开发高并发系统的基础，利用好多线程机制可以大大提高系统整体的并发能力以及性能。</li>
+</ul>
+<h4 id="2-1同步与异步"><a href="#2-1同步与异步" class="headerlink" title="2.1同步与异步"></a>2.1同步与异步</h4><h4 id="2-2并发-Concurrency-和并行-Parallelism"><a href="#2-2并发-Concurrency-和并行-Parallelism" class="headerlink" title="2.2并发(Concurrency)和并行(Parallelism)"></a>2.2并发(Concurrency)和并行(Parallelism)</h4><h4 id="2-3高并发"><a href="#2-3高并发" class="headerlink" title="2.3高并发"></a>2.3高并发</h4><h4 id="2-4临界区"><a href="#2-4临界区" class="headerlink" title="2.4临界区"></a>2.4临界区</h4><h4 id="2-4阻塞和非阻塞"><a href="#2-4阻塞和非阻塞" class="headerlink" title="2.4阻塞和非阻塞"></a>2.4阻塞和非阻塞</h4><h3 id="2-使用多线程常见的三种方式"><a href="#2-使用多线程常见的三种方式" class="headerlink" title="2.使用多线程常见的三种方式"></a>2.使用多线程常见的三种方式</h3><ul>
+<li>1.继承Thread类<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span>  <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.run();</span><br><span class="line">        System.out.println(<span class="string">"MyThread"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MyThread myThread = <span class="keyword">new</span> MyThread();</span><br><span class="line">        myThread.start();</span><br><span class="line">        System.out.println(<span class="string">"线程结束"</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>运行结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">线程结束</span><br><span class="line">MyThread</span><br></pre></td></tr></table></figure>
+
+<p>可以看到run方法的执行时间是随机的<br>线程是一个子任务，CPU以不确定的方式来调用线程中的run方法</p>
+<ul>
+<li>2.实现Runnable接口<br>java只能单继承，但是可以实现继承多个接口<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"MyRunnable"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main</span><br><span class="line"></span><br><span class="line">        Runnable runnable = <span class="keyword">new</span> MyRunnable();</span><br><span class="line">        Thread thread = <span class="keyword">new</span> Thread(runnable);</span><br><span class="line">        thread.start();</span><br><span class="line">        System.out.println(<span class="string">"线程结束"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">线程结束</span><br><span class="line">MyRunnable</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>3.使用线程池</li>
+</ul>
+<h3 id="3-实例变量与线程安全"><a href="#3-实例变量与线程安全" class="headerlink" title="3.实例变量与线程安全"></a>3.实例变量与线程安全</h3><ul>
+<li>3.1不共享数据的情况</li>
+<li>3.2共享数据的情况</li>
+</ul>
+]]></content>
+      <categories>
+        <category>java</category>
+        <category>线程</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>多线程</tag>
+      </tags>
+  </entry>
+</search>
