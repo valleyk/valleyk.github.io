@@ -18,23 +18,9 @@
       </tags>
   </entry>
   <entry>
-    <title>centos运行spring boot项目</title>
-    <url>/2019/08/14/centos%E8%BF%90%E8%A1%8Cspring%20boot%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h6 id="从github克隆项目"><a href="#从github克隆项目" class="headerlink" title="从github克隆项目"></a>从github克隆项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone  + ip</span><br></pre></td></tr></table></figure>
-
-<h6 id="打包项目"><a href="#打包项目" class="headerlink" title="打包项目"></a>打包项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
-
-<h5 id="使用flyway初始化数据库"><a href="#使用flyway初始化数据库" class="headerlink" title="使用flyway初始化数据库"></a>使用flyway初始化数据库</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn flyway:migrate</span><br></pre></td></tr></table></figure>
-
-<h5 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
-
-<h5 id="以debug方式运行，会打印错误信息"><a href="#以debug方式运行，会打印错误信息" class="headerlink" title="以debug方式运行，会打印错误信息"></a>以debug方式运行，会打印错误信息</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -debug</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>mysql</category>
-      </categories>
-      <tags>
-        <tag>mysql</tag>
-      </tags>
+    <title></title>
+    <url>/2019/07/06/flyway/</url>
+    <content><![CDATA[<h1 id="spring-boot集成flyway-H2数据库"><a href="#spring-boot集成flyway-H2数据库" class="headerlink" title="spring boot集成flyway,H2数据库"></a>spring boot集成flyway,H2数据库</h1>]]></content>
   </entry>
   <entry>
     <title>centos搭建mysql</title>
@@ -126,16 +112,23 @@
       </tags>
   </entry>
   <entry>
-    <title>用git bash作为idea的terminal</title>
-    <url>/2019/07/09/idea-terminal/</url>
-    <content><![CDATA[<h4 id="用git-bash作为idea的terminal"><a href="#用git-bash作为idea的terminal" class="headerlink" title="用git bash作为idea的terminal"></a>用git bash作为idea的terminal</h4><p>1.File-&gt;terminal-&gt;shell path   =  C:\Program Files\Git\bin\bash.exe</p>
-<h4 id="防止乱码问题"><a href="#防止乱码问题" class="headerlink" title="防止乱码问题"></a>防止乱码问题</h4><p>编辑C:\Program Files\Git\etc\bash.bashrc  最后添加<br>export LANG=”zh_CN.UTF-8”<br>export LC_ALL=”zh_CN.UTF-8”</p>
-]]></content>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2019/07/06/flyway/</url>
-    <content><![CDATA[<h1 id="spring-boot集成flyway-H2数据库"><a href="#spring-boot集成flyway-H2数据库" class="headerlink" title="spring boot集成flyway,H2数据库"></a>spring boot集成flyway,H2数据库</h1>]]></content>
+    <title>centos运行spring boot项目</title>
+    <url>/2019/08/14/centos%E8%BF%90%E8%A1%8Cspring%20boot%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h6 id="从github克隆项目"><a href="#从github克隆项目" class="headerlink" title="从github克隆项目"></a>从github克隆项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone  + ip</span><br></pre></td></tr></table></figure>
+
+<h6 id="打包项目"><a href="#打包项目" class="headerlink" title="打包项目"></a>打包项目</h6><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn package</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用flyway初始化数据库"><a href="#使用flyway初始化数据库" class="headerlink" title="使用flyway初始化数据库"></a>使用flyway初始化数据库</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mvn flyway:migrate</span><br></pre></td></tr></table></figure>
+
+<h5 id="运行项目"><a href="#运行项目" class="headerlink" title="运行项目"></a>运行项目</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -spring.profiles.active=prod</span><br></pre></td></tr></table></figure>
+
+<h5 id="以debug方式运行，会打印错误信息"><a href="#以debug方式运行，会打印错误信息" class="headerlink" title="以debug方式运行，会打印错误信息"></a>以debug方式运行，会打印错误信息</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">java -jar target/xxx.jar  -debug</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>mysql</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
   </entry>
   <entry>
     <title>常用教程、文档链接地址</title>
@@ -149,25 +142,6 @@
       <tags>
         <tag>help tags</tag>
         <tag>links</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/2019/08/24/java%208%20new%20property/</url>
-    <content><![CDATA[<p>###java 8 new property</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>java增加Cookie和删除Cookie</title>
-    <url>/2019/07/10/java_reomve_Cookie/</url>
-    <content><![CDATA[<h5 id="java通过response删除Cookie"><a href="#java通过response删除Cookie" class="headerlink" title="java通过response删除Cookie"></a>java通过response删除Cookie</h5><p>添加一个和需要删除的Cookie重名的Cookie,然后设置存在时间为0</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cookie cookie = new Cookie(&quot;token&quot;, null);</span><br><span class="line">cookie.setMaxAge(0);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>java</category>
-        <category>Cookie</category>
-      </categories>
-      <tags>
-        <tag>Cookie</tag>
       </tags>
   </entry>
   <entry>
@@ -204,22 +178,44 @@
       </tags>
   </entry>
   <entry>
-    <title>msyql忽略大小写敏感</title>
-    <url>/2019/08/14/mysql%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F/</url>
-    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br><span class="line">+-----------------------+</span><br><span class="line">| Tables_in_test        |</span><br><span class="line">+-----------------------+</span><br><span class="line">| COMMENT               |</span><br><span class="line">| NOTIFICATION          |</span><br><span class="line">| QUESTION              |</span><br><span class="line">| USER                  |</span><br><span class="line">| flyway_schema_history |</span><br><span class="line">+-----------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; select count(*) from question;</span><br><span class="line">ERROR 1146 (42S02): Table &apos;test.question&apos; doesn&apos;t exist</span><br></pre></td></tr></table></figure>
-
-<p>如果数据库表已经创建<br>改动配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure>
-
-<p>忽略大小写敏感之后<br>会出现table doesn’t exist<br>需要重新新建库<br>新建表    </p>
+    <title></title>
+    <url>/2019/08/24/java%208%20new%20property/</url>
+    <content><![CDATA[<p>###java 8 new property</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>java基础02</title>
+    <url>/2019/07/27/java%E5%9F%BA%E7%A1%8002/</url>
+    <content><![CDATA[<h5 id="6-java注解的工作原理"><a href="#6-java注解的工作原理" class="headerlink" title="6.java注解的工作原理"></a>6.java注解的工作原理</h5><h5 id="7-面向对象的特征"><a href="#7-面向对象的特征" class="headerlink" title="7.面向对象的特征"></a>7.面向对象的特征</h5><p>1) 抽象<br>2) 继承<br>3) 封装<br>4) 多态</p>
+<h5 id="8-java数据类型"><a href="#8-java数据类型" class="headerlink" title="8.java数据类型"></a>8.java数据类型</h5><p>1) java中包含基本数据类型和引用数据类型呢。<br>2) 基本类型：boolean,char,byte,short,int,long,float,double<br>3) 引用类型：Boolean,Character,Byte,Short,Integer,Long,Float,Double</p>
+<h5 id="9-作用域public-private-protected，不写的区别"><a href="#9-作用域public-private-protected，不写的区别" class="headerlink" title="9.作用域public,private,protected，不写的区别"></a>9.作用域public,private,protected，不写的区别</h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h5>]]></content>
       <categories>
-        <category>mysql</category>
+        <category>java</category>
+        <category>基础</category>
       </categories>
       <tags>
-        <tag>mysql</tag>
+        <tag>java</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用git bash作为idea的terminal</title>
+    <url>/2019/07/09/idea-terminal/</url>
+    <content><![CDATA[<h4 id="用git-bash作为idea的terminal"><a href="#用git-bash作为idea的terminal" class="headerlink" title="用git bash作为idea的terminal"></a>用git bash作为idea的terminal</h4><p>1.File-&gt;terminal-&gt;shell path   =  C:\Program Files\Git\bin\bash.exe</p>
+<h4 id="防止乱码问题"><a href="#防止乱码问题" class="headerlink" title="防止乱码问题"></a>防止乱码问题</h4><p>编辑C:\Program Files\Git\etc\bash.bashrc  最后添加<br>export LANG=”zh_CN.UTF-8”<br>export LC_ALL=”zh_CN.UTF-8”</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>java增加Cookie和删除Cookie</title>
+    <url>/2019/07/10/java_reomve_Cookie/</url>
+    <content><![CDATA[<h5 id="java通过response删除Cookie"><a href="#java通过response删除Cookie" class="headerlink" title="java通过response删除Cookie"></a>java通过response删除Cookie</h5><p>添加一个和需要删除的Cookie重名的Cookie,然后设置存在时间为0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cookie cookie = new Cookie(&quot;token&quot;, null);</span><br><span class="line">cookie.setMaxAge(0);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>java</category>
+        <category>Cookie</category>
+      </categories>
+      <tags>
+        <tag>Cookie</tag>
       </tags>
   </entry>
   <entry>
@@ -318,18 +314,22 @@
       </tags>
   </entry>
   <entry>
-    <title>java基础02</title>
-    <url>/2019/07/27/java%E5%9F%BA%E7%A1%8002/</url>
-    <content><![CDATA[<h5 id="6-java注解的工作原理"><a href="#6-java注解的工作原理" class="headerlink" title="6.java注解的工作原理"></a>6.java注解的工作原理</h5><h5 id="7-面向对象的特征"><a href="#7-面向对象的特征" class="headerlink" title="7.面向对象的特征"></a>7.面向对象的特征</h5><p>1) 抽象<br>2) 继承<br>3) 封装<br>4) 多态</p>
-<h5 id="8-java数据类型"><a href="#8-java数据类型" class="headerlink" title="8.java数据类型"></a>8.java数据类型</h5><p>1) java中包含基本数据类型和引用数据类型呢。<br>2) 基本类型：boolean,char,byte,short,int,long,float,double<br>3) 引用类型：Boolean,Character,Byte,Short,Integer,Long,Float,Double</p>
-<h5 id="9-作用域public-private-protected，不写的区别"><a href="#9-作用域public-private-protected，不写的区别" class="headerlink" title="9.作用域public,private,protected，不写的区别"></a>9.作用域public,private,protected，不写的区别</h5><h5 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h5>]]></content>
+    <title>msyql忽略大小写敏感</title>
+    <url>/2019/08/14/mysql%E5%BF%BD%E7%95%A5%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F/</url>
+    <content><![CDATA[<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; show tables;</span><br><span class="line">+-----------------------+</span><br><span class="line">| Tables_in_test        |</span><br><span class="line">+-----------------------+</span><br><span class="line">| COMMENT               |</span><br><span class="line">| NOTIFICATION          |</span><br><span class="line">| QUESTION              |</span><br><span class="line">| USER                  |</span><br><span class="line">| flyway_schema_history |</span><br><span class="line">+-----------------------+</span><br><span class="line">5 rows in set (0.00 sec)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; select count(*) from question;</span><br><span class="line">ERROR 1146 (42S02): Table &apos;test.question&apos; doesn&apos;t exist</span><br></pre></td></tr></table></figure>
+
+<p>如果数据库表已经创建<br>改动配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">lower_case_table_names=1</span><br></pre></td></tr></table></figure>
+
+<p>忽略大小写敏感之后<br>会出现table doesn’t exist<br>需要重新新建库<br>新建表    </p>
+]]></content>
       <categories>
-        <category>java</category>
-        <category>基础</category>
+        <category>mysql</category>
       </categories>
       <tags>
-        <tag>java</tag>
-        <tag>基础</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
